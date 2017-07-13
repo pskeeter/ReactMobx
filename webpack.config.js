@@ -14,10 +14,11 @@ module.exports = {
 		filename: 'bundle.js'
 	},
 	module: {
-		preLoaders: [
-			{ test: /\.js$/, exclude: /node_modules/, loader: 'eslint'}
-		],
+		// preLoaders: [
+		// 	{ test: /\.js$/, exclude: /node_modules/, loader: 'eslint'}
+		// ],
 		loaders: [
+      {test: /\.jsx$/, exclude: /node_modules/, loaders: ['babel']},
 			{ test: /\.js$/, exclude: /node_modules/, loader: 'react-hot!babel'},
 			{ test: /\.scss$/, loader: 'style!css!sass' }
 		]
@@ -30,7 +31,8 @@ module.exports = {
   resolve:{
     alias: {
       
-    }
+    },
+    extensions: ['', '.js', '.json', '.scss','jsx'],
   },
   externals: {
     'jquery': 'window.$'

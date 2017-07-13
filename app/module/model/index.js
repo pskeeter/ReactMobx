@@ -1,9 +1,7 @@
-import {observable, computed, reaction} from 'mobx'
+import { observable, computed, autorun, action } from 'mobx'
 
-export default class ObservableTodoStore {
-	@observable todos = [];
-    @observable pendingRequests = 0;
+class HostUser {
+  @observable defaultVal = 'abc'
 }
 
-
-// const observableTodoStore = new ObservableTodoStore();
+export default new HostUser()
